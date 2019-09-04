@@ -7,7 +7,11 @@ server.get('/', (req, res) => {
 	res.status(200).json({ api: 'up...' });
 });
 
-module.export = server;
+// routes
+
+const suppliersRouter = require('../suppliers/suppliers-router');
+server.use('/suppliers', suppliersRouter);
+module.exports = server;
 
 // RESOURCES
 
